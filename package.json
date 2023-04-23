@@ -1,0 +1,19 @@
+{
+  "name": "expresssimplerestapi",
+  "version": "1.0.0",
+  "description": "Simplest Node.js Express Rest API with Mongoose ODM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimmydin/expressSimpleRestAPI.git"
+  },
+  "author": "Marcelo Lopes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jimmydin/expressSimpleRestAPI/issues"
+  },
+  "homepage": "https://github.com/jimmydin/expressSimpleRestAPI#readme"
+}
