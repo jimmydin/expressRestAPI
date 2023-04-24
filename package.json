@@ -4,7 +4,8 @@
   "description": "Simplest Node.js Express Rest API with Mongoose ODM",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",

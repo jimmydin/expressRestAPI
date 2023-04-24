@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  # MongoDB services
+  mongo_db:
+    # a partir de qual imagem iremos criar esse serviço/container
+    image: mongo:latest
+    # caso ocorra algum problema no container, queremos que ele sempre reinicie seus serviços
+    restart: always
+    # definimos o volume como uma pasta local. Essa pasta terá os dados do banco. Caso não tenhamos 
+    # isso definido, se o serviço reiniciar, perderemos os dados da aplicação, pois estavam apenas
+    # dentro do serviço
+    volumes: 
+      - mongo_db:/data/db
+  
+  # Node API services
+  api:
+    # não utilizamos uma imagem, vamos utilizar o build do Dockerfile desse projeto
+    build: .
+    # expondo porta do container para a maquina local
+    # 4000 na maquina local e 3000 no container
+    ports: 
+      - 4000:3000
+    #definimos nossas variaveis de ambiente
+    environment:
+      # passamos o nome do serviço da base de dados e não localhost
+      DATABASE_URL: mongodb://mongo_db/simpleapirest
+    # mostramos que a API depende do serviço da base. Apenas começar a api quando o serviço da base estiver rodando
+    depends_on:
+      - mongo_db
+
+# criando o volume utilizado pelo banco que será gerenciado pelo container
+volumes:
+  mongo_db: {}
+
+  
