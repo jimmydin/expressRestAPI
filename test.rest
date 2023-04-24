@@ -1,0 +1,31 @@
+GET http://localhost:3000/customer
+
+###
+
+GET http://localhost:3000/customer/6445c5af0434c6357f8e054c
+
+###
+
+POST http://localhost:3000/customer
+Content-Type: application/json
+
+{
+    "name": "Marcelo",
+    "age": 30
+}
+
+###
+
+DELETE http://localhost:3000/customer/6445c5af0434c6357f8e054c
+
+###
+
+PATCH  http://localhost:3000/customer/6445cbe2b35e18b53066d5aa
+Content-Type: application/json
+
+{
+    "name": "Marcelo Edited",
+    "age": 31
+}
+
+###
